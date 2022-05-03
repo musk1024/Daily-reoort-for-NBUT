@@ -1,4 +1,4 @@
-# Daily-reoort-for-NBUT
+## 宁波工程学院每日健康打卡
 1、首先在text处将姓名、学院、专业、寝室楼、寝室号进行修改，已经添加了“！！！”以防找不到
 
 ![屏幕截图 2021-12-18 172550](https://user-images.githubusercontent.com/83929038/146636302-d60097e2-0f97-4238-91aa-eb670ada744e.png)
