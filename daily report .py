@@ -1,7 +1,7 @@
 import json
 import requests
 import time
-least = "2022-05-02" #最近一次核酸检测时间
+least = "2022-09-23" #最近一次核酸检测时间
 
 headers={'Host': 'form.nbut.edu.cn',
         'Connection': 'keep-alive',
@@ -22,7 +22,7 @@ headers={'Host': 'form.nbut.edu.cn',
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
 
 
-text = repr({"formWid":"33cbf04e092b4d17aef3946f245d5cb4","userId":"AM@stamp522","dataMap":{"wid":"","INPUT_KWYMPWZO":"!!!Name!!!","INPUT_KWYMPWZP":"!!!学院!!!","INPUT_KWZRFKE3":"！！！专业！！！","INPUT_KWZ02SZK":"！！！寝室楼！！！","INPUT_KWZ02SZL":"！！！寝室号！！！","RADIO_KWYMPX0A":"是","RADIO_KX369F35":"风华校区","RADIO_KX1T8ENX":"否","RADIO_KX1T8ENY":"否","RADIO_KWYMPX04":"绿","RADIO_KWYMPX05":"绿","RADIO_KWYMPWZT":"是","RADIO_KWYMPWZU":"两针","RADIO_KWYMPWZV":"是","DATEPICKER_KWYW0UX4":"last","RADIO_KWYMPWZX":"阴性","LOCATION_KX7NAIQR":"宁波市镇海区","INPUT_KX14LP0P":"宁波工程学院","RADIO_L0IZ3481":"无","RADIO_KWZ02SZM":"否","RADIO_KWZ02SZN":"","SELECT_KWZ02SZO":"","SELECT_KWZ02SZP":"","SELECT_KWZ02SZQ":"","INPUT_KX7NAIQS":"","INPUT_KX7NAIQT":"","INPUT_KWYMPWZR":"","RADIO_KWYMPX03":""},"commitDate":"date","commitMonth":"month","auditConfigWid":""})
+text = repr({"formWid":"33cbf04e092b4d17aef3946f245d5cb4","userId":"AM@stamp522","dataMap":{"wid":"","INPUT_KWYMPWZO":"高杰","INPUT_KWYMPWZP":"机械与汽车工程学院","INPUT_KWZRFKE3":"车辆21-2","INPUT_KWZ02SZK":"","INPUT_KWZ02SZL":"","RADIO_KWYMPX0A":"是","RADIO_KX369F35":"杭州湾校区","RADIO_KX1T8ENX":"否","RADIO_KX1T8ENY":"否","RADIO_KWYMPX04":"绿","RADIO_KWYMPWZT":"是","RADIO_KWYMPWZU":"两针","RADIO_KWYMPWZV":"否","DATEPICKER_KWYW0UX4":"last","RADIO_KWYMPWZX":"阴性","LOCATION_KX7NAIQR":"浙江省宁波市慈溪市","INPUT_KX14LP0P":"杭州湾汽车学院","RADIO_L0IZ3481":"无","INPUT_KX7NAIQS":"","INPUT_KX7NAIQT":"","INPUT_KWYMPWZR":"","RADIO_KWYMPX03":""},"commitDate":"date","commitMonth":"month","auditConfigWid":""})
 data = eval(text.replace('stamp',str(int(time.time()))).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',least))
 datas=json.dumps(data)
 r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers)
