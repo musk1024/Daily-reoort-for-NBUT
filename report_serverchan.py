@@ -5,7 +5,14 @@ import time
 least = "2022-09-23" #最近一次核酸检测时间
 api_key = "" #server酱api_key
 
-def All():
+def time_random():
+    start = int(round(time.time() * 1000))
+    t = random.randint(0, 3600000)  # 在一小时内随机取出
+    end = start + t
+    print(end)
+    return end,t
+
+def All(stamp_random):
     headers={'Host': 'form.nbut.edu.cn',
         'Connection': 'keep-alive',
         'Content-Length': '871',
@@ -27,7 +34,7 @@ def All():
 
     text = repr({
 	    "formWid": "33cbf04e092b4d17aef3946f245d5cb4",
-	    "userId": "AM@stamp522",
+	    "userId": "AM@stamp",
 	    "dataMap": {
 		    "wid": "",
 		    "INPUT_KWYMPWZO": "NAME",
@@ -56,7 +63,7 @@ def All():
 	    "commitDate": "date",
 	    "commitMonth": "month",
 	    "auditConfigWid": ""})
-    data = eval(text.replace('stamp',str(int(time.time()))).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',least))
+    data = eval(text.replace('stamp',str(stamp_random)).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',least))
     datas=json.dumps(data)
     r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers)
     print(r.text)
@@ -78,4 +85,8 @@ def message(key, title, body):
     requests.get(msg_url)
 
 if __name__ == '__main__':
-    All()
+    stamp_random,t_random = time_random()
+    tt = int(t_random / 1000)
+    print(tt)
+    time.sleep (tt)
+    report(stamp_random)
