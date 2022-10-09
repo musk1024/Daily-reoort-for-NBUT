@@ -1,8 +1,9 @@
 import json
 import requests
 import time
+import random
 
-least = "2022-09-23" #最近一次核酸检测时间
+least = "2022-10-08" #最近一次核酸检测时间
 api_key = "" #server酱api_key
 
 def time_random():
@@ -12,7 +13,7 @@ def time_random():
     print(end)
     return end,t
 
-def All(stamp_random):
+def report(stamp_random):
     headers={'Host': 'form.nbut.edu.cn',
         'Connection': 'keep-alive',
         'Content-Length': '871',
