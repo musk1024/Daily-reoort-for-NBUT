@@ -62,7 +62,7 @@ def message(title,content):
     NoticePush.push_plus(title, markdownContent)
         # print("标题->", title)
         # print("内容->\n", markdownContent)
-    NoticePush.Push_Deer(title,normalContent)
+    NoticePush.Push_Deer(title,markdownContent)
     NoticePush.telegram_bot(title, normalContent)
     NoticePush.bark(title, normalContent)
     NoticePush.enterprise_wechat(title, normalContent)
