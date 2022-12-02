@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: szenius/set-timezone@v1.0
+    - name: Change TimeZone
+      uses: szenius/set-timezone@v1.0
       with:
         timezoneLinux: "Asia/Singapore"
         timezoneMacos: "Asia/Singapore"
         timezoneWindows: "Singapore Standard Time"
-    - name: Change TimeZone
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
