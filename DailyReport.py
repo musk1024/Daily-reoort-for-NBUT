@@ -34,7 +34,11 @@ def report(stamp_random):
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
 
     print(headers)
-    text = repr(GlobalVariable.TEXT)
+    print(type(GlobalVariable.TEXT))
+    if type(GlobalVariable.TEXT) == dict:
+        text = repr(GlobalVariable.TEXT)
+    else :
+        text = GlobalVariable.TEXT
     data = eval(text.replace('stamp',str(stamp_random)).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',GlobalVariable.least))
     datas=json.dumps(data)
     r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers)
