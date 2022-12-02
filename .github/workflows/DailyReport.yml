@@ -25,7 +25,7 @@ jobs:
       env:
           TEXT: ${{ secrets.TEXT }}
           SERVERPUSHKEY: ${{ secrets.SERVERPUSHKEY }}
-          PUSHDEER: ${{ secrets.PUSHDEER}}
+          PUSHDEERKEY: ${{ secrets.PUSHDEERKEY}}
           AUTHENTICATION: ${{ secrets.AUTHENTICATION }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
