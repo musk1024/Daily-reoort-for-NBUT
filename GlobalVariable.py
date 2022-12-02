@@ -1,5 +1,5 @@
 import os
-TEXT = repr({
+TEXT = {
 	    "formWid": "33cbf04e092b4d17aef3946f245d5cb4",
 	    "userId": "AM@stamp",
 	    "dataMap": {
@@ -29,7 +29,7 @@ TEXT = repr({
 	    },
 	    "commitDate": "date",
 	    "commitMonth": "month",
-	    "auditConfigWid": ""})
+	    "auditConfigWid": ""}
 
 least = "2022-10-08" #最近一次核酸检测时间
 Authentication = os.environ.get("AUTHENTICATION", "") # 必填 认证信息
