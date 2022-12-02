@@ -33,8 +33,7 @@ def report(stamp_random):
         'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
 
-    print(headers)
-    print(type(GlobalVariable.TEXT))
+
     if type(GlobalVariable.TEXT) == dict:
         text = repr(GlobalVariable.TEXT)
     else :
