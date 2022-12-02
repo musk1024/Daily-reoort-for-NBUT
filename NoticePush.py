@@ -79,7 +79,7 @@ def telegram_bot(title, content):
 
 # 企业微信推送
 def enterprise_wechat(title, content):
-    html = markdown.markdown(content)
+    html = markdown.markdown(repr(content))
     access_token = ""
     if not GlobalVariable.ACCESSTOKEN:
         if not GlobalVariable.CORPID or not GlobalVariable.CORPSECRET or not GlobalVariable.TOUSER or not GlobalVariable.AGENTID:

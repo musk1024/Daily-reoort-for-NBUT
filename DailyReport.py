@@ -42,30 +42,19 @@ def report(stamp_random):
     result = r.json()
     if result.get('message') == "请求成功":
         print("打卡成功")
-        message(result.get('message'), r.json().get("message"))
+        message(result.get('message'), r.text)
     else:
         print("打卡失败，错误信息: ", r.json().get("message"))
-        message(result.get('message'), data)
+        message(result.get('message'), r.text)
 
-def message(title,content):
+def message(title,Content):
 
-    if isinstance(content,str):
-        markdownContent = content
-        normalContent = content
-    else:
-        # mk模板
-        markdownContent = NoticeTemplate.markdownTemplate().format(**content)
-        # 普通模板
-        normalContent = NoticeTemplate.normalTemplate().format(**content)
-
-    NoticePush.server_push(title, markdownContent.replace("- ***", "```"))
-    NoticePush.push_plus(title, markdownContent)
-        # print("标题->", title)
-        # print("内容->\n", markdownContent)
-    NoticePush.Push_Deer(title,markdownContent)
-    NoticePush.telegram_bot(title, normalContent)
-    NoticePush.bark(title, normalContent)
-    NoticePush.enterprise_wechat(title, normalContent)
+    NoticePush.server_push(title, Content)
+    NoticePush.push_plus(title, Content)
+    NoticePush.Push_Deer(title,Content)
+    NoticePush.telegram_bot(title, Content)
+    NoticePush.bark(title, Content)
+    NoticePush.enterprise_wechat(title, Content)
 
 
     # 信息输出测试
