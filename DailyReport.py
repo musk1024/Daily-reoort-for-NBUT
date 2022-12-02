@@ -34,7 +34,6 @@ def report(stamp_random):
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7'}
 
     print(headers)
-    print(TEXT)
     print(Authentication)
     text = repr(GlobalVariable.TEXT)
     data = eval(text.replace('stamp',str(stamp_random)).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',GlobalVariable.least))
