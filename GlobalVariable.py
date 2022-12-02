@@ -32,7 +32,7 @@ TEXT = repr({
 	    "auditConfigWid": ""})
 
 least = "2022-10-08" #最近一次核酸检测时间
-Authentication = os.environ.get("Authentication", "") # 必填 认证信息
+Authentication = os.environ.get("AUTHENTICATION", "") # 必填 认证信息
 TEXT = os.environ.get("TEXT", "") # 必填 填报的内容
 SERVERPUSHKEY = os.environ.get("SERVERPUSHKEY", "")  # Server酱推送
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")  # Telegram推送服务Token
