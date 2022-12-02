@@ -42,10 +42,10 @@ def report(stamp_random):
     result = r.json()
     if result.get('message') == "请求成功":
         print("打卡成功")
-        message(result.get('message'), text)
+        message(result.get('message'), GlobalVariable.TEXT)
     else:
         print("打卡失败，错误信息: ", r.json().get("message"))
-        message(result.get('message'), text)
+        message(result.get('message'), GlobalVariable.TEXT)
 
 def message(title,content):
 
