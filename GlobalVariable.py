@@ -1,6 +1,6 @@
 import os
 
-least = "2022-10-08" #最近一次核酸检测时间
+least = "2022-12-01" #最近一次核酸检测时间
 Authentication = os.environ.get("AUTHENTICATION", "") # 必填 认证信息
 TEXT = os.environ.get("TEXT", "") # 必填 填报的内容
 SERVERPUSHKEY = os.environ.get("SERVERPUSHKEY", "")  # Server酱推送
