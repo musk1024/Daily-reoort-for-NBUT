@@ -69,5 +69,5 @@ if __name__ == '__main__':
     stamp_random,t_random = time_random()
     tt = int(t_random / 1000)
     print(tt)
-    #time.sleep (tt)
+    time.sleep (tt)
     report(stamp_random)
