@@ -43,12 +43,7 @@ def report(stamp_random):
     r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers)
     print(r.text)
     result = r.json()
-    if result.get('message') == "请求成功":
-        print("打卡成功")
-        message(result.get('message'), r.text)
-    else:
-        print("打卡失败，错误信息: ", r.json().get("message"))
-        message(result.get('message'), r.text)
+    message("每日健康打卡", result.get('message'))
 
 def message(title,Content):
 
