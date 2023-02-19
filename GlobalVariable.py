@@ -1,8 +1,9 @@
 import os
 
-least = "2022-12-01" #最近一次核酸检测时间
+# least = "2022-12-01" #最近一次核酸检测时间
 Authentication = os.environ.get("AUTHENTICATION", "") # 必填 认证信息
 TEXT = os.environ.get("TEXT", "") # 必填 填报的内容
+# TEXT = os.environ.get("TEXT", "{\"formWid\":\"33cbf04e092b4d17aef3946f245d5cb4\",\"userId\":\"AM@stamp\",\"dataMap\":{\"wid\":\"\",\"INPUT_KWYMPWZO\":\"!!!姓名!!!\",\"INPUT_KWYMPWZP\":\"!!!学院!!!\",\"INPUT_KWZRFKE3\":\"!!!班级!!!\",\"RADIO_KWYMPX0A\":\"是\",\"RADIO_KX369F35\":\"杭州湾校区\",\"RADIO_LDNTJPFN\":\"否\",\"RADIO_LDNTJPFH\":\"感染过\",\"RADIO_LDNTJPFM\":\"否\",\"RADIO_KWYMPWZT\":\"是\",\"RADIO_KWYMPWZU\":\"两针\",\"RADIO_LDNTJPFO\":\"\"},\"commitDate\":\"date\",\"commitMonth\":\"month\",\"auditConfigWid\":\"\"}")
 SERVERPUSHKEY = os.environ.get("SERVERPUSHKEY", "")  # Server酱推送
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")  # Telegram推送服务Token
 TG_USER_ID = os.environ.get("TG_USER_ID", "")  # Telegram推送服务UserId
