@@ -9,6 +9,7 @@ import GlobalVariable
 
 def time_random():
     start = int(round(time.time() * 1000))
+    # t = random.randint(0, 1) #测试用
     t = random.randint(0, 3600000)  # 在一小时内随机取出
     end = start + t
     print(end)
@@ -38,9 +39,10 @@ def report(stamp_random):
         text = repr(GlobalVariable.TEXT)
     else :
         text = GlobalVariable.TEXT
-    data = eval(text.replace('stamp',str(stamp_random)).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',GlobalVariable.least))
+    data = eval(text.replace('stamp',str(stamp_random)).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())))
+    # data = eval(text.replace('stamp',str(stamp_random)).replace('date',time.strftime("%Y-%m-%d", time.localtime())).replace('month',time.strftime("%Y-%m", time.localtime())).replace('last',GlobalVariable.least))
     datas=json.dumps(data)
-    r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers)
+    r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers, verify=False)
     print(r.text)
     result = r.json()
     message("每日健康打卡", result.get('message'))
