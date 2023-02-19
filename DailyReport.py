@@ -45,7 +45,8 @@ def report(stamp_random):
     r=requests.post("https://form.nbut.edu.cn/dfi/formData/saveFormSubmitData", data=datas, headers=headers, verify=False)
     print(r.text)
     result = r.json()
-    message("每日健康打卡", result.get('message'))
+    title = '每日健康打卡 %s'%result.get('message')
+    message(title, text)
 
 def message(title,Content):
 
