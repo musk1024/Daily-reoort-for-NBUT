@@ -8,7 +8,7 @@
 {\"formWid\":\"33cbf04e092b4d17aef3946f245d5cb4\",\"userId\":\"AM@stamp\",\"dataMap\":{\"wid\":\"\",\"INPUT_KWYMPWZO\":\"!!!姓名!!!\",\"INPUT_KWYMPWZP\":\"!!!学院!!!\",\"INPUT_KWZRFKE3\":\"!!!班级!!!\",\"RADIO_KWYMPX0A\":\"是\",\"RADIO_KX369F35\":\"杭州湾校区\",\"RADIO_LDNTJPFN\":\"否\",\"RADIO_LDNTJPFH\":\"感染过\",\"RADIO_LDNTJPFM\":\"否\",\"RADIO_KWYMPWZT\":\"是\",\"RADIO_KWYMPWZU\":\"两针\",\"RADIO_LDNTJPFO\":\"\"},\"commitDate\":\"date\",\"commitMonth\":\"month\",\"auditConfigWid\":\"\"}
 ```
 
-对以上的正文进行修改
+对以上的正文进行修改，并将其填入 *GlobalVariable.py* 文件的 ```TEXT = os.environ.get("TEXT", "")``` 这一行中
 
 2. 安装fiddler，选择tools-option-HTTPS，按照以下的进行设置
 
